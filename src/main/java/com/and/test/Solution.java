@@ -16,7 +16,10 @@ public class Solution {
     public static String solution(String input) throws NumberFormatException {
         // Check if input does not contain numbers
         String numbersInput = removeAlpha(input);
-            // If no numbers found, throw exception
+        // If no numbers found, throw exception
+        if (numbersInput.length() == 0){
+            throw new NumberFormatException("Input must contain at least one number");
+        }
 
         // recursively get AND siblings
         ArrayList<String> results = new ArrayList<String>();
