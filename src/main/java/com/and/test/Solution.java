@@ -15,28 +15,21 @@ public class Solution {
 
     public static String solution(String input) throws NumberFormatException {
         // Check if input does not contain numbers
-            // Iterate through chars of string
-            // If number found, add to new string
+        String numbersInput = removeAlpha(input);
             // If no numbers found, throw exception
 
-        // Select first digit in number string
-        // Select next digit
-        // repeat until no digits remain (string length is 0)
-        // go to previous digit, replace with last digit
-            // base case, no remaining digits
-            // recursive case, selected digits + remaining digits
-            // add each recursion to results list
+        // recursively get AND siblings
+        ArrayList<String> results = new ArrayList<String>();
+        getAndSiblings(results, "", numbersInput);
 
         // Sort results in descending order
-        ArrayList<String> results = new ArrayList<String>(Arrays.asList("5","6","7"));
         List<String> sortedResults = results
                 .stream()
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
-        System.out.println(String.join(",", sortedResults));
-        // return string
 
-        return null;
+        // return string
+        return String.join(",", sortedResults);
     }
 
     public static void getAndSiblings(ArrayList<String> results, String selectedDigits, String remainingDigits) {

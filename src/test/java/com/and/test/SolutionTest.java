@@ -11,4 +11,11 @@ public class SolutionTest {
     public void removeAlpha_returnsNumbersOnly(){
         assertEquals("326", solution.removeAlpha("A32 B6"));
     }
+
+    @Test
+    public void solutionFor3Numbers(){
+        assertEquals("632,623,362,326,263,236", solution.solution("326"));
+    }
+
+    
 }
