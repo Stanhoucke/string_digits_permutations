@@ -30,10 +30,25 @@ public class Solution {
         return null;
     }
 
-    
+    public static void getAndSiblings(String selectedDigits, String remainingDigits) {
+        // base case
+        if (remainingDigits.length() == 0){
+            System.out.println(selectedDigits);
+            return;
+        }
+
+        for (int i = 0; i < remainingDigits.length(); i++) {
+            String newSelectedDigits = selectedDigits + remainingDigits.charAt(i);
+            String newRemainingDigits = remainingDigits.substring(0, i) + remainingDigits.substring(i + 1);
+            getAndSiblings(newSelectedDigits, newRemainingDigits);
+
+        }
+
+    }
 
     public static void main(String args[]) {
-        solution("326");
+//        solution("326");
+        getAndSiblings("","326");
     }
 
 }
