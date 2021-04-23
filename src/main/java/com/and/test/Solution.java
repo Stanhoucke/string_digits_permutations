@@ -1,8 +1,11 @@
 package com.and.test;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Solution {
 
@@ -25,6 +28,12 @@ public class Solution {
             // add each recursion to results list
 
         // Sort results in descending order
+        ArrayList<String> results = new ArrayList<String>(Arrays.asList("5","6","7"));
+        List<String> sortedResults = results
+                .stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+        System.out.println(String.join(",", sortedResults));
         // return string
 
         return null;
@@ -51,9 +60,7 @@ public class Solution {
             if (Character.isDigit(currentElement) ){
                 inputNumbers.append(currentElement);
             }
-
         }
-
         return inputNumbers.toString();
     }
 
