@@ -43,9 +43,12 @@ public class Solution {
         }
 
         for (int i = 0; i < remainingDigits.length(); i++) {
-            String newSelectedDigits = selectedDigits + remainingDigits.charAt(i);
-            String newRemainingDigits = remainingDigits.substring(0, i) + remainingDigits.substring(i + 1);
-            getAndSiblings(results, newSelectedDigits, newRemainingDigits);
+                String newSelectedDigits = selectedDigits + remainingDigits.charAt(i);
+                String newRemainingDigits = remainingDigits.substring(0, i) + remainingDigits.substring(i + 1);
+                if (results.contains(newSelectedDigits + newRemainingDigits)){
+                    continue;
+                }
+                getAndSiblings(results, newSelectedDigits, newRemainingDigits);
         }
     }
 
@@ -61,10 +64,8 @@ public class Solution {
     }
 
     public static void main(String args[]) {
-        solution("326");
-//        ArrayList<String> results = new ArrayList<String>();
-//        getAndSiblings(results, "","326");
-//        System.out.println(results);
+//        solution("326");
+        System.out.println(solution("113"));
     }
 
 }

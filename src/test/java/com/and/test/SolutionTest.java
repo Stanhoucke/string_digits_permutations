@@ -31,4 +31,9 @@ public class SolutionTest {
     public void solutionThrowsNumberException(){
         solution.solution("ABC");
     }
+
+    @Test
+    public void solutionForLargeNumberWithDuplicates(){
+        System.out.println(solution.solution("623132966"));
+    }
 }
