@@ -44,11 +44,24 @@ public class Solution {
         }
     }
 
+    public static String removeAlpha(String input) {
+        StringBuilder inputNumbers = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            char currentElement = input.charAt(i);
+            if (Character.isDigit(currentElement) ){
+                inputNumbers.append(currentElement);
+            }
+
+        }
+
+        return inputNumbers.toString();
+    }
+
     public static void main(String args[]) {
-//        solution("326");
-        ArrayList<String> results = new ArrayList<String>();
-        getAndSiblings(results, "","326");
-        System.out.println(results);
+        solution("326");
+//        ArrayList<String> results = new ArrayList<String>();
+//        getAndSiblings(results, "","326");
+//        System.out.println(results);
     }
 
 }
