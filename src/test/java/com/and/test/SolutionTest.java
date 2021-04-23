@@ -27,13 +27,23 @@ public class SolutionTest {
         assertEquals("4321,4312,4231,4213,4132,4123,3421,3412,3241,3214,3142,3124,2431,2413,2341,2314,2143,2134,1432,1423,1342,1324,1243,1234", solution.solution("2143"));
     }
 
+    @Test
+    public void solutionWithDuplicateNumbers(){
+        assertEquals("3211,3121,3112,2311,2131,2113,1321,1312,1231,1213,1132,1123", solution.solution("1213"));
+    }
+
+    @Test
+    public void solutionFor1Number(){
+        assertEquals("9", solution.solution("9"));
+    }
+
     @Test(expected = NumberFormatException.class)
     public void solutionThrowsNumberException(){
         solution.solution("ABC");
     }
 
     @Test
-    public void solutionForLargeNumberWithDuplicates(){
-        System.out.println(solution.solution("623132966"));
+    public void solutionRunsForLargeNumberWithDuplicates(){
+        solution.solution("623132966");
     }
 }
