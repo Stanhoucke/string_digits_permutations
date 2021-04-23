@@ -50,11 +50,13 @@ public class Solution {
                 // Select next digit, update remaining digits without selected digit
                 String newSelectedDigits = selectedDigits + remainingDigits.charAt(i);
                 String newRemainingDigits = remainingDigits.substring(0, i) + remainingDigits.substring(i + 1);
+                char currentDigit = remainingDigits.charAt(i);
 
-                // Check results for duplicates
-                if (results.contains(newSelectedDigits + newRemainingDigits)){
+                // Skip recursive call if combination of digits isn't the first occurrence
+                if (remainingDigits.indexOf(currentDigit) != i){
                     continue;
                 }
+
                 // Recursive call with updated arguments
                 getAndSiblings(results, newSelectedDigits, newRemainingDigits);
         }

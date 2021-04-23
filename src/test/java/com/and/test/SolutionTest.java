@@ -44,6 +44,6 @@ public class SolutionTest {
 
     @Test
     public void solutionRunsForLargeNumberWithDuplicates(){
-        solution.solution("623132966");
+        solution.solution("48276270146");
     }
 }
